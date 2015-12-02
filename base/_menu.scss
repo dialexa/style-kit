@@ -1,0 +1,74 @@
+$menu-directions: (
+  (right left -10px -20px)
+  (bottom top 0 -10px)
+) !default;
+
+%menu-base {
+  position: absolute;
+  min-width: 160px;
+  opacity: 0;
+  pointer-events: none;
+  top: 50%;
+  @include pop;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@each $menu-dir in $menu-directions {
+  $dir: nth($menu-dir, 1);
+  $arr: nth($menu-dir, 2);
+  $x: nth($menu-dir, 3);
+  $y: nth($menu-dir, 4);
+
+  .menu--#{$dir} {
+    #{$dir}: -100%;
+    transform: translate($x, $y);
+
+    &.active {
+      @if $dir == bottom {
+        transform: translate($x, $y + 25);
+      } @else if $dir == right {
+        transform: translate($x + 35, $y);
+      }
+    }
+
+    .arr--#{$arr} {
+      @include arrow($arr, 6px, $white, 10%, palette(gray,base));
+    }
+  }
+}
+
+
+
+.menu {
+  @extend %menu-base;
+
+  .nav__list {
+    background: white;
+    border: 1px solid palette(gray,base);
+    box-shadow: 0 2px 5px rgba(black,.2);
+    text-align: left;
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  .nav__item {
+    display: block;
+    font-size: .75em;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    color: palette(gray,base);
+    display: block;
+    padding: .5em;
+
+    &:hover {
+      background: palette(gray,xx-light);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.section--sm {
+  padding: 0;
+}
+
+.tab__btns {
+  display: flex;
+  justify-content: space-around;
+  max-width: 25em;
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 1em;
+
+  &.wide {
+    max-width: 35em;
+
+    .btn--tab {
+      padding: .5em 1.5em;
+    }
+  }
+
+  @include gmq(palm) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @include gmq(lap) {
+    font-size: .875em;
+  }
+}
+
+.btn--tab {
+  color: $orange;
+  text-transform: none;
+  font-weight: 400;
+  padding: .5em 3em;
+  letter-spacing: 0;
+  font-size: 1.125em;
+  border-radius: 300px;
+
+  &.active {
+    background: $orange;
+    color: $white;
+  }
+}

@@ -1,0 +1,204 @@
+// Font families. Feel free to change these as the project sees fit.
+
+$size-base: 1em;
+$font-family--primary: 'Open Sans';
+$font-family--secondary: 'Helvetica';
+
+@mixin font-primary {
+  font-family: $font-family--primary, sans-serif;
+}
+
+@mixin font-secondary {
+  font-family: $font-family--secondary, sans-serif;
+}
+
+
+// Headers // -------------------------------------------------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-primary;
+  color: palette(gray,x-dark);
+  margin: 0;
+  font-weight: 100;
+  line-height: $size-base * 1.5;
+
+  @media (max-width: 64em) {
+    line-height: 1.25;
+  }
+}
+
+h1 {
+  font-size: $size-base * 1.875;
+  font-size: 9.5vh;
+
+}
+h2 {
+  font-size: $size-base * 1.675;
+  font-size: 6.7vh;
+}
+h3 {
+  font-size: $size-base * 1.5;
+}
+h4 {
+  font-size: $size-base * 1.5;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h5 {
+  font-size: $size-base * 1.25;
+}
+h6 {
+  font-size: $size-base * 1.125;
+}
+
+
+.section__header {
+  font-size: 2.25em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: palette(gray,dark);
+  margin-bottom: 1em;
+  text-align: center;
+
+  .icon {
+    width: 1em;
+    height: 1em;
+    transform: translateY(5px);
+    fill: palette(gray,dark);
+  }
+
+  &--light {
+    color: palette(gray,dark);
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+
+  @include gmq(portable) {
+    text-align: center;
+  }
+}
+
+
+// Paragraphs // ----------------------------------------------------------------------------------------
+p {
+  color: palette(gray,dark);
+  font-size: $size-base;
+  line-height: $size-base * 1.5;
+  margin-bottom: 1.5em;
+}
+
+
+// Links // ---------------------------------------------------------------------------------------------
+a {
+  @include font-primary;
+  color: $blue;
+  text-decoration: underline;
+  transition: all .1s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: palette(blue,x-light);
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &:focus {
+    outline: 0
+  }
+}
+
+.faux-link {
+  @extend a;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+// Content Block Elements // ---------------------------------------------------------------------------
+dl,
+menu,
+ol,
+ul,
+p,
+pre {
+  margin: 0 0 $size-base;
+}
+
+// Lists // -----------------------------------------------------------------------------------------------
+menu,
+ol,
+ul {
+  padding: 0 0 0 $size-base * 2;
+}
+
+// Special Text // ----------------------------------------------------------------------------------
+
+.line-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 1em 0;
+
+  &:before {
+    content: "";
+    display: block;
+    border-top: solid 1px palette(gray,dark);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+  }
+
+  &__text {
+    position: relative;
+    background: palette(gray,xx-light);
+    padding: 0 20px;
+    z-index: $zIndex-1;
+    font-style: italic;
+  }
+}
+
+
+// Helpers // ---------------------------------------------------
+
+.bold-me {
+  font-weight: 700;
+
+  &--gray {
+    color: palette(gray,dark);
+  }
+}
+
+.ital {
+  font-style: italic;
+  font-weight: 200;
+  margin-left: -.1em;
+}
+
+.required-field {
+  font-weight: normal;
+  font-size: smaller;
+  text-transform: none;
+  font-style: italic;
+  color: palette(gray,dark);
+}
+
+.null-linkto {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}

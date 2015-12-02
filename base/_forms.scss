@@ -1,0 +1,271 @@
+// Forms // --------------------------------------------------
+form {
+  display: flex;
+}
+// Stretch inputs/textareas to full width and add height to maintain a consistent baseline ----------------------------
+select,
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="color"] {
+  width: 100%;
+  -webkit-appearance: none;
+  padding: .5em .5em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  line-height: 1.4;
+  background-color: #fff;
+  border: 1px solid $gray;
+  border-radius: 3px;
+  outline: none;
+  color: palette(gray, x-dark);
+
+  &.has-disclaimer {
+    margin-bottom: 0;
+  }
+}
+
+// Remove expand arrow select menus IE
+select::-ms-expand {
+  display: none;
+}
+// Firefox red outline for required fields
+input:required {
+  box-shadow:none;
+}
+
+// Rounded search input
+input[type="search"] {
+  // Override content-box in normalize
+  box-sizing: border-box;
+}
+input[type="search"]:focus {
+  text-align: left;
+}
+
+%file-input {
+  border-radius: 3px;
+  padding: .5em 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .1s ease-in-out;
+}
+
+
+// File Input
+input[type="file"] {
+
+  cursor: pointer !important;
+
+  &::-webkit-file-upload-button {
+    @extend %file-input;
+  }
+
+  &::-ms-browse {
+    @extend %file-input;
+  }
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 0.6em;
+  margin-bottom: 1em;
+  margin-top: 0.2em;
+}
+
+
+input[type="submit"] {
+  text-align: center;
+}
+
+// Allow text area's height to grow larger than a normal input // -------------------------------------------
+textarea {
+  height: auto;
+}
+
+select {
+  height: auto;
+  font-size: 16px;
+  background-color: $white;
+}
+
+fieldset {
+  border: none;
+  legend {
+    font-weight: 600;
+  }
+}
+
+%label {
+  color: $gray;
+  text-transform: uppercase;
+}
+
+label {
+  font-weight: 100;
+}
+
+.label {
+  &--sm {
+    @extend %label;
+    font-size: .75em;
+    color: palette(gray,x-dark);
+    letter-spacing: 0;
+  }
+  &--md {
+
+  }
+  &--lg {
+    font-size: 1.3em;
+  }
+
+  &--bold {
+    @extend %label;
+    color: palette(gray, x-dark);
+    font-weight: 600;
+  }
+}
+
+.section-form {
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+
+  .label {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: .5em;
+  }
+
+  .input-row:last-of-type:not(:only-child) {
+    margin-bottom: 2em;
+  }
+
+  .label {
+    text-align: left;
+  }
+}
+
+// Input column (cluster multiple inputs together into a single group) // -------------------------------------------------------------------
+$input-cols: "25" "33" "40" "50" "60" "66" "75" "100";
+
+
+@each $w in $input-cols {
+  .input-col--#{$w} {
+    width: #{$w + '%'};
+    padding-right: 1em;
+
+    @if $w == "33" {
+      width: 33.3%;
+    }
+
+    @if $w == "66" {
+      width: 66.6%;
+    }
+
+    &:last-child,
+    &:only-child {
+      padding-right: 0;
+    }
+
+    &.no-label {
+      display: flex;
+      padding-top: 0.5em;
+    }
+  }
+}
+
+.input-col--select {
+  position: relative;
+
+  &:after {
+    content: '';
+    background-image: url('/assets/images/arrow-down2.svg');
+    position: absolute;
+    right: .9em;
+    top: 2.6em;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &.no-label {
+    &:after {
+      top: 1.15em;
+    }
+  }
+}
+
+
+// Input groups with labels // --------------------------------------------------
+
+// To use labels with input groups, wrap a label and an input in an .input-row
+.input-row {
+  position: relative;
+  display: flex;
+  margin-bottom: .5em;
+
+  &:last-child:not(:only-child) {
+    margin-bottom: 0;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.input-select__row {
+  .input-col--select {
+    display: flex;
+
+    &:after {
+      right: .5em;
+      top: .7em;
+    }
+  }
+
+  input {
+    width: 70%;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .select-menu {
+    width: 30%;
+
+    select {
+      height: 2.5em;
+      border-left: none;
+      border-radius: 0 3px 3px 0;
+      color: palette(gray, dark);
+      font-weight: 500;
+    }
+
+  }
+
+  &--typeahead {
+    .type-ahead {
+      width: 70%;
+    }
+
+    .type-ahead__input-wrapper {
+      border-radius: 3px 0 0 3px;
+    }
+  }
+}

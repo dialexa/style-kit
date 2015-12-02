@@ -1,0 +1,127 @@
+@mixin center($dir:'both') {
+  position: absolute;
+
+  @if $dir == 'v' {
+    top: 50%;
+    transform: scale(1) translate3d(0,-50%,0);
+  } @else if $dir == 'h' {
+    left: 50%;
+    transform: scale(1) translate3d(-50%, 0, 0);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: scale(1) translate3d(-50%,-50%,0);
+  }
+}
+
+.abs-center {
+  @include center();
+
+  &--horizontal {
+    @include center(h);
+  }
+
+  &--vertical {
+    @include center(v);
+  }
+}
+
+@mixin abs-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: "";
+}
+
+@mixin wh($w,$h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin s-overlay($color, $o: 1) {
+  @include abs-overlay;
+  background-color: rgba($color,$o);
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin placeholder {
+  &.placeholder { @content; }
+}
+
+@mixin pop {
+  transition: all .3s cubic-bezier(.3,0,0,1.15);
+}
+
+@mixin default-shadow {
+  box-shadow: rgba(black, 0.25) 0 2px 3px 0;
+}
+
+@mixin default-1dp-shadow {
+  box-shadow: rgba(black, 0.25) 0 1px 1px 0;
+}
+
+@mixin hover-shadow {
+  box-shadow: 0 1px 2px 0 rgba(black,0.15), 0 2px 4px 0 rgba(black,0.25);
+}
+
+@mixin hidden-flex {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  left: 100%;
+
+  &[data-show="show"] {
+    left: 0;
+  }
+}
+
+@mixin user-action($color) {
+  td {
+    color: darken($color,5%);
+
+    button {
+      .icon {
+        fill: rgba(darken($color,5%),.3);
+      }
+      &:hover {
+        .icon {
+          fill: rgba(darken($color,5%),.3);
+        }
+      }
+    }
+  }
+}
+
+@mixin display-flex($flex-dir:row, $align-items:null, $justify-content:null) {
+  display: flex;
+  flex-direction: $flex-dir;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin margin-padding(
+  $margin-top: null,
+  $margin-left: null,
+  $margin-bottom: null,
+  $margin-right: null,
+  $padding-top: null,
+  $padding-left: null,
+  $padding-bottom: null,
+  $padding-right: null ) {
+    margin-top: $margin-top;
+    margin-left: $margin-right;
+    margin-bottom: $margin-bottom;
+    margin-right: $margin-left;
+    padding-top: $padding-top;
+    padding-left: $padding-left;
+    padding-bottom: $padding-bottom;
+    padding-right: $padding-right;
+}

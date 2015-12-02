@@ -1,0 +1,68 @@
+$image-height: 15em;
+
+.image-uploader {
+  background: palette(gray, x-light);
+  background-size: cover;
+  background-position: 50% 50%;
+  border: 1px solid palette(gray);
+  height: $image-height;
+  position: relative;
+  margin-bottom: 1em;
+  transition: all .2s;
+
+  &.has-image {
+    &:after {
+      pointer-events: none;
+      @include s-overlay($blue, .5);
+    }
+  }
+
+  .icon,
+  .spinner {
+    transform-origin: center;
+    @include pop();
+    @include center();
+  }
+
+  &__content {
+    @include center();
+    width: 100%;
+    text-align: center;
+
+    &.has-image {
+      z-index: $zIndex-1;
+
+      .image-uploader__icon {
+        opacity: 0;
+        height: 60px;
+        width: 60px;
+        transform: translateY(1.5em);
+      }
+    }
+
+    .loading__spinner {
+      height: 40px;
+      path {fill: $green;}
+
+      &.delete {
+        height: 40px;
+        path {fill: $red;}
+      }
+    }
+
+    .icon--done-loading {
+      width: 36px;
+      path {fill: $green;}
+    }
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__input--hidden {
+    height: $image-height;
+    width: 100%;
+    opacity: 0;
+  }
+}

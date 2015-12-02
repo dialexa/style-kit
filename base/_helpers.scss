@@ -1,0 +1,133 @@
+// ------------------------
+// POSITIONING
+// ------------------------
+
+$pixels: "6" "12" "18" "24" "32";
+
+.margin-bottom {
+  margin-bottom: 1.5em;
+
+  @each $pixel in $pixels {
+    &--#{$pixel} {
+      margin-bottom: #{$pixel}px;
+    }
+  }
+}
+
+.margin-top {
+  margin-top: 1.5em;
+
+  @each $pixel in $pixels {
+    &--#{$pixel} {
+      margin-top: #{$pixel}px;
+    }
+  }
+}
+
+.abs-center {
+  @include center();
+
+  &--horizontal {
+    @include center(h);
+  }
+
+  &--vertical {
+    @include center(v);
+  }
+}
+
+
+
+// ------------------------
+// LAYOUT
+// ------------------------
+
+.flex-container {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  &--justify-start {
+    justify-content: flex-start;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--justify-between {
+    justify-content: space-between;
+  }
+
+  &--justify-around {
+    justify-content: space-around;
+  }
+}
+
+
+
+// ------------------------
+// TYPE
+// ------------------------
+
+.text {
+  &--light {
+    font-weight: 100;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--lower {
+    text-transform: lowercase;
+  }
+
+  &--upper {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--size {
+    $sizes: "75" "80" "85" "90" "95" "105" "110" "115" "120" "125";
+
+    @each $size in $sizes {
+      &--#{$size} {
+        font-size: #{$size}%;
+      }
+    }
+  }
+
+  &--weight {
+    $weights: "100" "200" "300" "400" "500" "600" "700" "800" "900";
+
+    @each $weight in $weights {
+      &--#{$weight} {
+        font-weight: #{$weight};
+      }
+    }
+  }
+}

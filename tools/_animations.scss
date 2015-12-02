@@ -1,0 +1,287 @@
+$current-keyframes: [
+  'shake',
+  'squeezeIn',
+  'squeezeOut',
+  'slowPop',
+  'expand',
+  'shrink',
+  'fadeInUpCenter',
+  'fadeInDownCenter',
+  'fadeInUp',
+  'fadeInDown',
+  'fadeInLeft',
+  'slideInLeftShort',
+  'slideInRightShort',
+  'slideInLeft',
+  'slideInRight',
+  'growRight',
+  'fadeOutDown',
+  'fadeIn',
+  'slide',
+  'flipInY',
+  'slideInL',
+  'slideInR'
+];
+
+.animated {
+  animation-duration: .4s;
+  animation-fill-mode: both;
+}
+
+@each $kf in $current-keyframes {
+  .#{$kf} {
+    animation-name: $kf;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes squeezeIn {
+  0% {
+    max-width: 0;
+    transition-timing-function: cubic-bezier(.3,0,0,1.3);
+  }
+  100% {
+    max-width: 15em;
+    transition-timing-function: cubic-bezier(.3,0,0,1.3);
+  }
+}
+
+@keyframes squeezeOut {
+  0% {
+    max-width: 15em;
+    transition-timing-function: cubic-bezier(.3,0,0,1.3);
+  }
+  100% {
+    max-width: 0;
+    transition-timing-function: cubic-bezier(.3,0,0,1.3);
+  }
+}
+
+@keyframes slowPop {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(.8);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes fadeInUpCenter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%,100%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%,-50%,0);
+  }
+}
+
+@keyframes fadeInDownCenter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%,-100%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%,0,0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-10%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes slideInLeftShort {
+  0% {
+    transform: translate3d(-10%,0,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes slideInRightShort {
+  0% {
+    transform: translate3d(10%,0,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translate3d(-30%,0,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translate3d(30%,0,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes growRight {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 30em;
+  }
+}
+
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transition-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes slideInL {
+  0% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+
+  100% {
+    transform: translate3d(0%, -50%, 0);
+  }
+}
+@keyframes slideInR {
+  0% {
+    transform: translate3d(100%, -50%, 0);
+  }
+
+  100% {
+    transform: translate3d(0%, -50%, 0);
+  }
+}
+
+.spinner {
+  width: 15px;
+  height: 11px;
+}

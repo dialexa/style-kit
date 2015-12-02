@@ -1,0 +1,262 @@
+@import '../tools/mixins';
+
+$button-sizes: (
+  small: (
+    class-name: 'sm',
+    font-size: .75,
+  ),
+  medium: (
+    class-name: 'md',
+    font-size: 1,
+  ),
+  large: (
+    class-name: 'lg',
+    font-size: 1.5,
+  )
+);
+
+$button-fills: (
+  outline: (
+    class-name: 'outline',
+    border-width: 1,
+  ),
+  solid: (
+    class-name: 'solid',
+    border-width: 0
+  )
+);
+
+button,
+[class*="btn"] {
+  outline: 0;
+  -webkit-appearance: none;
+  user-select: none;
+  cursor: hand;
+  border-radius: 3px;
+  padding: .5em 1em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all .1s ease-in-out;
+
+  .icon {
+    vertical-align: bottom;
+    transition: fill .2s;
+    fill: palette(gray, dark);
+    path { fill: palette(gray, dark); }
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &[disabled='true'] {
+    .icon {
+      fill: $gray;
+      path { fill: $gray; }
+    }
+  }
+
+}
+
+
+.btn {
+  // Types
+  &__toggle {
+    background: palette(gray,x-dark);
+    border: none;
+    color: palette(gray,base);
+    border-radius: 0;
+  }
+
+  &--full {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+
+@each $theme, $color in $ui-colors {
+  .btn--#{$theme} {
+    border: none;
+    background: $color;
+    color: $white;
+
+    &:hover {
+      color: rgba(white,.6);
+    }
+
+    @if $theme == 'transparent' {
+      color: palette(gray,x-dark);
+
+      &:hover {
+        color: $gray;
+      }
+    }
+  }
+
+  .btn.#{$theme} {
+    border: none;
+    background: $color;
+    color: $white;
+
+    &:hover {
+      color: rgba(white,.6);
+    }
+  }
+
+  .btn--outline.btn--#{$theme} {
+    color: $color;
+  }
+}
+
+
+// Button Sizes // --------------------
+@each $item, $size in $button-sizes {
+  $class: map-get($size, class-name);
+  $font-size: map-get($size, font-size);
+
+  .btn--#{$class} {
+    font-size: #{$font-size}em;
+
+    @if $class == 'sm' {
+      .icon {
+        height: 16px;
+      }
+    }
+  }
+}
+
+// Button fills
+@each $item, $fill in $button-fills {
+  $class: map-get($fill, class-name);
+  $border-width: map-get($fill, border-width);
+
+  .btn--#{$class} {
+    @if $border-width != 0 {
+      border: #{$border-width}px solid;
+      background: none;
+      color: inherit;
+    } @else {
+      border: none;
+    }
+
+  }
+}
+
+.btn-group {
+  display: inline-block;
+
+  &__container {
+    text-align: center;
+  }
+
+  &__btn {
+    background: $white;
+    color: palette(gray,x-dark);
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    border: 1px solid palette(gray,base);
+    border-right: none;
+    border-radius: 0;
+    position: relative;
+
+    &.active {
+      background: $orange;
+      color: darken(palette(orange,dark), 7%);
+
+      .icon {
+        fill: darken(palette(orange,dark), 7%);
+      }
+    }
+
+    &:first-of-type {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-of-type {
+      border-right: 1px solid palette(gray,base);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .icon {
+      width: 1.2em;
+      height: 1.2em;
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  &.between {
+    justify-content: space-between;
+  }
+  &.center {
+    justify-content: center;
+  }
+
+  &.column {
+    flex-direction: column;
+    align-items: center;
+
+    &.end {
+      align-items: flex-end;
+    }
+
+    >button {
+      margin-bottom: 1em;
+    }
+  }
+
+  button,[class*='btn'] {
+    padding: .5em 1em;
+
+    &.btn--full {
+      width: 100%;
+    }
+  }
+}
+
+.icon-badge {
+  @include center();
+  border-radius: 30px;
+  border: 3px solid palette(gray,x-dark);
+  @include wh(60px, 60px);
+
+  .icon {
+    @include center();
+    @include wh(40px, 40px);
+    path {fill: palette(gray,x-dark);}
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &--small {
+    cursor: pointer;
+    border-width: 2px;
+    @include wh(24px, 24px);
+
+    .icon {
+      @include wh(12px, 12px);
+      path {fill: $red;}
+    }
+  }
+}
+
+@each $theme, $color in $ui-colors {
+  .icon-badge--#{$theme} {
+    border-color: $color;
+
+    .icon {
+      path {fill: $color;}
+    }
+  }
+}

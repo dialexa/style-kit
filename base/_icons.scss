@@ -1,0 +1,16 @@
+$widths: "10", "15", "20", "25", "30", "35", "40", "45", "50";
+
+.icon {
+  @each $w in $widths {
+    &--#{$w} {
+      height: #{$w}px;
+      width: #{$w}px;
+    }
+  }
+
+  @each $theme, $color in $ui-colors {
+    &--#{$theme} {
+      path { fill: $color; }
+    }
+  }
+}

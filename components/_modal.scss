@@ -1,0 +1,156 @@
+.overlay {
+  @include s-overlay(black,.3);
+  z-index: $zIndex-10;
+  transition: opacity .25s;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &--show {
+    opacity: 1;
+  }
+
+  &--solid--white {
+    background: $white;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+  }
+
+  .btn-group {
+    position: relative;
+    padding: 1em 0;
+    bottom: inherit;
+  }
+}
+
+.confirm {
+  &__title,
+  &__desc {
+    text-align: center;
+  }
+}
+
+$modal-border-radius: 3px;
+
+%modal {
+  @include center();
+  position: fixed;
+  background: white;
+  box-shadow: 0 3px 15px rgba(0,0,0,.25);
+  border-radius: $modal-border-radius;
+  min-width: 18em;
+  max-width: 480px;
+  @include pop();
+  z-index: $zIndex-10;
+
+  @include gmq(palm) {
+    min-width: 90vw;
+  }
+}
+
+%modal-btn {
+  padding: 1em;
+  border-top: 1px solid $gray;
+  font-size: 1.125em;
+  padding: 1em .5em;
+  @extend %label;
+  color: $white;
+}
+
+.modal-container {
+  @include s-overlay(black,.25);
+  z-index: $zIndex-10;
+  @include pop();
+  min-height: 100vh;
+  position: fixed;
+
+  &--full-screen {
+    @include s-overlay($white,1);
+    z-index: $zIndex-9;
+  }
+}
+
+// Applied to site wrapper
+.modal--open {
+  @include s-overlay(black,.4);
+  z-index: 1200;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.modal {
+  @extend %modal;
+
+  &--full-screen {
+    @include center(v);
+    @include gmq(ipad){
+      margin-top: -30%;
+    }
+  }
+
+  &__header {
+    padding: 1em;
+    position: relative;
+    background: palette(gray,x-dark);
+    border-radius: $modal-border-radius $modal-border-radius 0 0;
+    text-align: center;
+  }
+
+  &__body {
+    max-height: 60vh;
+    overflow: scroll;
+    text-align: center;
+
+    .container {
+      padding: 1.5em;
+    }
+
+    input {
+      text-align: center;
+    }
+  }
+
+  &__footer {
+    display: flex;
+
+    .btn {
+      flex: 1;
+      color: $white;
+
+      &:first-child {
+        border-radius: 0 0 0 $modal-border-radius;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $modal-border-radius 0;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.125em;
+    letter-spacing: 1.83px;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  &__text {
+    padding-bottom: 1em;
+
+    @include gmq(palm) {
+      font-size: .875em;
+    }
+
+  }
+
+}

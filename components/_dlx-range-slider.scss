@@ -1,0 +1,54 @@
+// The DLX Range slider is built on top of noUiSlider
+// All rules in this stylesheet overwrite those native to noUiSlider
+
+.noUi-horizontal {
+  height: 15px;
+  background-color: palette(gray, dark);
+
+  &.noUi-target {
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .noUi-handle {
+    width: 26px;
+    height: 26px;
+    left: -14px;
+    top: -5px;
+    border-radius: 60px;
+    box-shadow: none;
+    border: 1px solid palette(gray,dark);
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 9px;
+      background: $gray;
+      top: 6px;
+    }
+
+    &:before {
+      left: 8px;
+      top: 9px;
+    }
+    &:after {
+      left: 8px;
+      top: 14px;
+    }
+
+    &-lower {
+      transform: rotate(90deg);
+    }
+    &-upper {
+      transform: rotate(-90deg) translateY(-1em);
+    }
+  }
+}
+
+.noUi-connect {
+  background: $orange;
+}
