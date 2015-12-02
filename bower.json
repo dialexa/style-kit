@@ -1,0 +1,24 @@
+{
+  "name": "dialexa-style-guide",
+  "homepage": "https://github.com/dialexa/dialexa-style-guide",
+  "authors": [
+    "Chris Miller <chris@dialexa.com>"
+  ],
+  "description": "CSS / SASS Style base for Dialexa projects.",
+  "main": "app.scss",
+  "moduleType": [],
+  "keywords": [
+    "css",
+    "sass",
+    "styleguide"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
