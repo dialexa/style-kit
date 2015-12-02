@@ -12,5 +12,5 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* npm install --save-dev dialexa-style-guide
+* `npm install --save-dev dialexa-style-guide`
 * Add path for `app.scss` to SASS grunt build or ember-cli-build
