@@ -1,8 +1,8 @@
 // Font families. Feel free to change these as the project sees fit.
 
 $size-base: 1em;
-$font-family--primary: 'Open Sans';
-$font-family--secondary: 'Helvetica';
+$font-family--primary: 'Source Sans Pro';
+$font-family--secondary: 'Source Code Pro';
 
 @mixin font-primary {
   font-family: $font-family--primary, sans-serif;
@@ -10,6 +10,13 @@ $font-family--secondary: 'Helvetica';
 
 @mixin font-secondary {
   font-family: $font-family--secondary, sans-serif;
+}
+
+.font-primary {
+  @include font-primary;
+}
+.font-secondary {
+  @include font-secondary;
 }
 
 
@@ -21,7 +28,7 @@ h4,
 h5,
 h6 {
   @include font-primary;
-  color: palette(gray,x-dark);
+  color: palette(gray,xx-dark);
   margin: 0;
   font-weight: 100;
   line-height: $size-base * 1.5;
@@ -57,36 +64,6 @@ h6 {
 }
 
 
-.section__header {
-  font-size: 2.25em;
-  font-weight: 100;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: palette(gray,dark);
-  margin-bottom: 1em;
-  text-align: center;
-
-  .icon {
-    width: 1em;
-    height: 1em;
-    transform: translateY(5px);
-    fill: palette(gray,dark);
-  }
-
-  &--light {
-    color: palette(gray,dark);
-  }
-
-  &--inline {
-    display: inline-block;
-  }
-
-  @include gmq(portable) {
-    text-align: center;
-  }
-}
-
-
 // Paragraphs // ----------------------------------------------------------------------------------------
 p {
   color: palette(gray,dark);
@@ -105,7 +82,7 @@ a {
 
   &:hover,
   &:focus {
-    color: palette(blue,x-light);
+    color: palette(dialexa, gold);
   }
 
   &:active,

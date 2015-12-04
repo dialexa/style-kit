@@ -58,9 +58,10 @@
   }
 
   &__td {
-    padding: 1.5em 0;
+    padding: 1em 0;
     padding-left: .5em;
     position: relative;
+    font-weight: 300;
 
     &--xs {
       padding: .5em 0 .5em .5em;
@@ -73,7 +74,6 @@
       padding: .75em 0;
       padding-left: .5em;
       min-width: 24px;
-      font-size: .875em;
     }
 
     &--md {

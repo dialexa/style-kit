@@ -5,37 +5,36 @@
 $white    : #fff;
 $gray     : #c0c2c1;
 
-$red      : #d73d1d;
-$orange   : #ef832b;
-$green    : #81d234;
-$blue     : #084f7d;
-$green    : #83D041;
+$red      : #F64744;
+$orange   : #FB822C;
+$green    : #4BC16B;
+$blue     : #1EAAF1;
+$navy     : #2D4F73;
 $yellow   : #EC9F3C;
+
+$dx-blue  : #14282D;
+$dx-gold  : #D6B064;
+$dx-gray  : #525252;
 
 
 // Color Palette Modifiers
 $palettes: (
   gray: (
-    xx-light  : lighten($gray, 30%),
+    xx-light  : #f8f8f8,
     x-light   : lighten($gray, 20%),
     light     : lighten($gray, 10%),
     base      : $gray,
     dark      : darken($gray, 15%),
     x-dark    : darken($gray, 25%),
+    xx-dark    : darken($gray, 50%),
   ),
   blue: (
     x-light   : lighten($blue, 20%),
     light     : lighten($blue, 10%),
     base      : $blue,
     dark      : darken($blue, 10%),
-    x-dark    : darken($blue, 20%)
-  ),
-  orange: (
-    x-light   : lighten($orange, 20%),
-    light     : lighten($orange, 10%),
-    base      : $orange,
-    dark      : darken($orange, 10%),
-    x-dark    : darken($orange, 20%)
+    x-dark    : darken($blue, 20%),
+    dx-blue   : $dx-blue
   ),
   green: (
     x-light   : lighten($green, 20%),
@@ -43,6 +42,11 @@ $palettes: (
     base      : $green,
     dark      : darken($green, 10%),
     x-dark    : darken($green, 20%)
+  ),
+  dialexa: (
+    blue      : $dx-blue,
+    gold      : $dx-gold,
+    gray      : $dx-gray,
   ),
   brands: (
     facebook  : #3b5998,
@@ -67,15 +71,11 @@ $ui-colors: (
   saving        : lighten($green,10%),
   info          : $blue,
   gold          : $yellow,
-  facebook      : palette(brands, facebook),
-  'white'       : $white,
-  'transparent' : rgba($white, 0),
+  white         : $white,
+  transparent   : rgba($white, 0),
   disabled      : $gray,
-  refresh       : lighten(palette(blue,bright), 15%),
   active        : $green,
-
   danger        : $red,
-
   default       : $orange,
   pending       : $gray,
   fulfilled     : $green,

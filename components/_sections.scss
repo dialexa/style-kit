@@ -1,0 +1,61 @@
+$border-dirs: ( 'border-bottom' 'border-top' 'border-left' 'border-right' );
+
+section {
+  padding: 2em 0;
+
+  @include gmq(desk) {
+    padding: 3em 0;
+  }
+}
+
+.section {
+  &--light {
+    background: $white;
+  }
+
+  &--lg {
+    padding: 6em 0;
+  }
+
+  &--md {
+    padding: 1.5em 0;
+  }
+
+  &--sm {
+    padding: .75em 0;
+  }
+
+  &--center {
+    [class*='section__header'] {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    font-size: 1.25em;
+    color: palette(gray,xx-dark);
+  }
+
+  &__header {
+    font-size: 1.875em;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: palette(gray,x-dark);
+    margin-bottom: 1em;
+
+    &--light {
+      color: palette(gray,dark);
+    }
+
+    @include gmq(portable) {
+      text-align: center;
+    }
+
+  }
+
+  @each $dir in $border-dirs {
+    &--#{$dir} {
+      #{$dir}: 1px solid darken($gray, 7%);
+    }
+  }
+}

@@ -1,4 +1,4 @@
-$current-keyframes: [
+$current-keyframes: (
   'shake',
   'squeezeIn',
   'squeezeOut',
@@ -21,7 +21,7 @@ $current-keyframes: [
   'flipInY',
   'slideInL',
   'slideInR'
-];
+);
 
 .animated {
   animation-duration: .4s;

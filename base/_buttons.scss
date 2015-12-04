@@ -164,11 +164,11 @@ button,
     position: relative;
 
     &.active {
-      background: $orange;
-      color: darken(palette(orange,dark), 7%);
+      background: $blue;
+      color: darken($blue, 10%);
 
       .icon {
-        fill: darken(palette(orange,dark), 7%);
+        fill: darken($blue, 10%);
       }
     }
 

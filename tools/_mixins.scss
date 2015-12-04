@@ -14,18 +14,6 @@
   }
 }
 
-.abs-center {
-  @include center();
-
-  &--horizontal {
-    @include center(h);
-  }
-
-  &--vertical {
-    @include center(v);
-  }
-}
-
 @mixin abs-overlay {
   position: absolute;
   top: 0;
@@ -63,7 +51,7 @@
   box-shadow: rgba(black, 0.25) 0 2px 3px 0;
 }
 
-@mixin default-1dp-shadow {
+@mixin dp-shadow {
   box-shadow: rgba(black, 0.25) 0 1px 1px 0;
 }
 
@@ -99,6 +87,101 @@
     }
   }
 }
+
+@mixin arrow($direction: top, $size: 10px, $color: #ccc, $center: 50%, $border-color: #cfcfcf, $margin: 0) {
+  position: relative;
+  border-color: $border-color;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-color: $color;
+    z-index: 2;
+
+    @if $direction == "right" {
+      top: $center;
+      left: 100%;
+      margin-left: $margin;
+      margin-top: $size * -1;
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+      border-left-color: $color;
+    } @else if $direction == "bottom" {
+      top: 100%;
+      left: $center;
+      margin-top: $margin;
+      margin-left: $size * -1;
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $color;
+      border-top-color: $color;
+    } @else if $direction == "left" {
+      top: $center;
+      right: 100%;
+      margin-right: $margin;
+      margin-top: $size * -1;
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right:$size solid $color;
+      border-right-color: $color;
+    } @else {
+      bottom: 100%;
+      left: $center;
+      margin-bottom: $margin;
+      margin-left: $size * -1;
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+      border-bottom-color: $color;
+    }
+  }
+
+  &:after {
+    z-index: 1;
+    @if $direction == "right" {
+      top: $center;
+      left: 100%;
+      margin-left: $margin;
+      margin-top: ($size + 1) * -1;
+      border-top: ($size + 1) solid transparent;
+      border-bottom: ($size + 1) solid transparent;
+      border-left: ($size + 1) solid $border-color;
+      border-left-color: $border-color;
+    } @else if $direction == "bottom" {
+      top: 100%;
+      left: $center;
+      margin-top: $margin;
+      margin-left: ($size + 1) * -1;
+      border-left: ($size + 1) solid transparent;
+      border-right: ($size + 1) solid transparent;
+      border-top: ($size + 1) solid $border-color;
+      border-top-color: $border-color;
+    } @else if $direction == "left" {
+      top: $center;
+      right: 100%;
+      margin-right: $margin;
+      margin-top: ($size + 1) * -1;
+      border-top: ($size + 1) solid transparent;
+      border-bottom: ($size + 1) solid transparent;
+      border-right:($size + 1) solid $border-color;
+      border-right-color: $border-color;
+    } @else {
+      bottom: 100%;
+      left: $center;
+      margin-bottom: $margin;
+      margin-left: ($size + 1) * -1;
+      border-left: ($size + 1) solid transparent;
+      border-right: ($size + 1) solid transparent;
+      border-bottom: ($size + 1) solid $border-color;
+      border-bottom-color: $border-color;
+    }
+  }
+}
+
 
 @mixin display-flex($flex-dir:row, $align-items:null, $justify-content:null) {
   display: flex;

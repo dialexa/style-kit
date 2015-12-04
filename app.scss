@@ -1,6 +1,7 @@
 @import "base/all-base";
 @import "tools/all-tools";
 @import "components/all-components";
+@import "layouts/all-layouts";
 
 html {
   height: 100%;
@@ -8,8 +9,8 @@ html {
   text-size-adjust: 100%;
 
   @media (max-width: 67.0625em) {
-      font-size: 95%;
-    }
+    font-size: 95%;
+  }
 }
 
 * {
@@ -43,9 +44,11 @@ body {
 
 .site {
   min-height: 100vh;
+  display: flex;
 
   &-content {
     min-height: 100vh;
+    width: 100%;
   }
 }
 
@@ -62,33 +65,5 @@ body {
   &--push-down.container {
     height: auto;
     margin-top: 2em;
-  }
-}
-
-.flex-container {
-  display: flex;
-
-  &--start {
-    @include display-flex(row,flex-start,center);
-  }
-
-  &--center {
-    @include display-flex(row,center,center);
-  }
-
-  &--end {
-    @include display-flex(row,center,flex-end);
-  }
-
-  &--between {
-    @include display-flex(row,center,space-between);
-  }
-
-  &--column {
-    @include display-flex(column,center,center);
-
-    &.start {
-      align-items: flex-start;
-    }
   }
 }
