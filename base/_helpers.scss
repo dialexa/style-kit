@@ -9,7 +9,7 @@ $pixels: "6" "12" "18" "24" "32";
 
   @each $pixel in $pixels {
     &--#{$pixel} {
-      margin-bottom: #{$pixel}px;
+      margin-bottom: #{$pixel}px !important;
     }
   }
 }
@@ -19,7 +19,7 @@ $pixels: "6" "12" "18" "24" "32";
 
   @each $pixel in $pixels {
     &--#{$pixel} {
-      margin-top: #{$pixel}px;
+      margin-top: #{$pixel}px !important;
     }
   }
 }
@@ -76,6 +76,10 @@ $pixels: "6" "12" "18" "24" "32";
 
   &--justify-around {
     justify-content: space-around;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
   }
 }
 

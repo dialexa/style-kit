@@ -42,7 +42,7 @@
   &__tr {
     @include pop();
 
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       background: darken(palette(gray,x-light),2%);
     }
 

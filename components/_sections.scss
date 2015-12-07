@@ -47,7 +47,7 @@ section {
       color: palette(gray,dark);
     }
 
-    @include gmq(portable) {
+    @include gmq(palm) {
       text-align: center;
     }
 

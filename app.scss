@@ -1,7 +1,6 @@
 @import "base/all-base";
 @import "tools/all-tools";
 @import "components/all-components";
-@import "layouts/all-layouts";
 
 html {
   height: 100%;
@@ -36,10 +35,6 @@ body {
   line-height: 1.4;
   transition: transform .5s cubic-bezier(.47,-0.71,.45,1.65);
   overflow-x: hidden;
-  @include gmq('portable') {
-    overflow-x: scroll;
-    min-width: 1024px;
-  }
 }
 
 .site {

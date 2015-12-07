@@ -30,7 +30,7 @@ h6 {
   @include font-primary;
   color: palette(gray,xx-dark);
   margin: 0;
-  font-weight: 100;
+  font-weight: 300;
   line-height: $size-base * 1.5;
 
   @media (max-width: 64em) {
@@ -39,16 +39,14 @@ h6 {
 }
 
 h1 {
-  font-size: $size-base * 1.875;
-  font-size: 9.5vh;
+  font-size: $size-base * 3.25;
 
 }
 h2 {
-  font-size: $size-base * 1.675;
-  font-size: 6.7vh;
+  font-size: $size-base * 3;
 }
 h3 {
-  font-size: $size-base * 1.5;
+  font-size: $size-base * 1.6;
 }
 h4 {
   font-size: $size-base * 1.5;
