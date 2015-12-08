@@ -2,24 +2,25 @@
 // POSITIONING
 // ------------------------
 
-$pixels: "6" "12" "18" "24" "32";
+$pixels: ( "6" "12" "18" "24" "32" "48" "64" );
+$dirs: ( "top" "bottom" "left" "right" "none");
 
-.margin-bottom {
-  margin-bottom: 1.5em;
-
-  @each $pixel in $pixels {
-    &--#{$pixel} {
-      margin-bottom: #{$pixel}px !important;
+@each $dir in $dirs {
+  @if $dir == "none" {
+    @each $pixel in $pixels {
+      .margin--#{$pixel} {
+        margin: #{$pixel}px !important;
+      }
     }
-  }
-}
+  } @else {
+    .margin-#{$dir} {
+      margin-#{$dir}: 1em !important;
 
-.margin-top {
-  margin-top: 1.5em;
-
-  @each $pixel in $pixels {
-    &--#{$pixel} {
-      margin-top: #{$pixel}px !important;
+      @each $pixel in $pixels {
+        &--#{$pixel} {
+          margin-#{$dir}: #{$pixel}px !important;
+        }
+      }
     }
   }
 }
@@ -90,10 +91,6 @@ $pixels: "6" "12" "18" "24" "32";
 // ------------------------
 
 .text {
-  &--light {
-    font-weight: 100;
-  }
-
   &--bold {
     font-weight: 600;
   }

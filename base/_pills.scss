@@ -1,36 +1,20 @@
 %pill {
   padding: .3em 1em;
   border-radius: 50px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: .75em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-
-%badge {
-  position: absolute;
-  top: 5px;
-  border-radius: 300px;
-  padding: .5em;
-  font-size: 9px;
-  line-height: .6;
-  width: 1.6em;
-}
-
 .pill {
   @extend %pill;
-  background: $orange;
+  background: $blue;
   color: $white;
 }
 
 @each $theme, $color in $ui-colors {
   .pill--#{$theme} {
-    background: $color;
-    color: $white;
-  }
-
-  .badge--#{$theme} {
     background: $color;
     color: $white;
   }

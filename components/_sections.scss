@@ -32,8 +32,13 @@ section {
   }
 
   &__body {
-    font-size: 1.25em;
+    font-weight: 400;
     color: palette(gray,xx-dark);
+
+    &.lg {
+      font-size: 1.25em;
+      font-weight: 300;
+    }
   }
 
   &__header {

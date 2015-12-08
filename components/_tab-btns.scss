@@ -1,22 +1,21 @@
-.section--sm {
-  padding: 0;
+%base-btn {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 1em 1.5em;
+  letter-spacing: 2px;
 }
 
 .tab__btns {
   display: flex;
-  justify-content: space-around;
-  max-width: 25em;
+  justify-content: flex-start;
   padding: 0;
   margin: 0 auto;
   margin-bottom: 1em;
-
-  &.wide {
-    max-width: 35em;
-
-    .btn--tab {
-      padding: .5em 1.5em;
-    }
-  }
+  width: 100%;
+  border-bottom: 1px solid lighten($gray, 3%);
 
   @include gmq(palm) {
     flex-direction: column;
@@ -26,19 +25,20 @@
   @include gmq(lap) {
     font-size: .875em;
   }
-}
 
-.btn--tab {
-  color: $orange;
-  text-transform: none;
-  font-weight: 400;
-  padding: .5em 3em;
-  letter-spacing: 0;
-  font-size: 1.125em;
-  border-radius: 300px;
+  &--btn {
+    @extend %base-btn;
+    color: palette(gray, dark);
 
-  &.active {
-    background: $orange;
-    color: $white;
+    &:hover {
+      box-shadow: $blue 0 -1px 0 0 inset;
+      color: palette(gray, x-dark);
+    }
+
+    &.active {
+      box-shadow: $blue 0 -2px 0 0 inset;
+      color: palette(gray, x-dark);
+    }
   }
+
 }
