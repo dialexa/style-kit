@@ -88,7 +88,7 @@
 }
 
 @each $theme, $color in $ui-colors {
-  .notify-super.#{$theme} {
+  .notify-super--#{$theme} {
     background: $color;
     border: 2px solid lighten($color, 50%);
 
@@ -96,22 +96,6 @@
       color: lighten($color, 50%);
     }
   }
-}
-
-.orders--error {
-  position: absolute;
-  top: 2em;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: fadeIn;
-  animation-duration: .5s;
-  animation-fill-mode: both;
-  font-size: 1.125em;
-  letter-spacing: 0.025em;
-  font-weight: 400;
-  background: rgba(lighten($red, 40%), .4);
-  color: rgba($red, .7);
-  box-shadow: none;
 }
 
 .alert {
@@ -138,7 +122,7 @@
 }
 
 @each $theme, $color in $ui-colors {
-  .alert-#{$theme} {
+  .alert--#{$theme} {
     background-color: darken(rgba($color,.9), 3%);
     border: 1px solid $color;
     font-weight: 300;
