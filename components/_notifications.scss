@@ -139,9 +139,12 @@
   top: 0;
   transform: translate3d(50%, -50%, 0);
   border: 3px solid $white;
-  animation: pulseColor 1s ease infinite alternate;
-  animation-fill-mode: both;
   z-index: $zIndex-9;
+
+  &.pulse {
+    animation: pulseColor 1s ease infinite alternate;
+    animation-fill-mode: both;
+  }
 
   &.exiting {
     right: -10px;
@@ -155,14 +158,14 @@
   .circle-notification--#{$theme} {
     background: $color;
     box-shadow: rgba($color, .3) 0 0 0 8px;
-  }
 
-  @keyframes pulseColor {
-    0% {
-      box-shadow: 0 0 0 10px rgba($color,.4);
-    }
-    100% {
-      box-shadow: 0 0 0 20px rgba($color,.4);
+    @keyframes pulseColor {
+      0% {
+        box-shadow: 0 0 0 10px rgba($color,.4);
+      }
+      100% {
+        box-shadow: 0 0 0 20px rgba($color,.4);
+      }
     }
   }
 }
