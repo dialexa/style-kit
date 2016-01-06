@@ -60,8 +60,8 @@
 
 @each $theme, $color in $ui-colors {
   .notification--#{$theme} {
-    box-shadow: $color 0 1px 1px 0;
-    background: lighten($color, 40%);
+    border: 1px solid $color;
+    background: lighten($color, 35%);
     color: darken($color, 10%);
   }
 }
