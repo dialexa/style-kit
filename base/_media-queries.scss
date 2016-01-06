@@ -7,7 +7,7 @@ $breakpoints: (
   'mid' '(min-width: 768px)',
   'desk' '(min-width: 1024px)',
   'ipad' '(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)'
-)!default;
+);
 
 
 @mixin gmq($media-query) {
