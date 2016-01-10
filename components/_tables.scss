@@ -4,32 +4,38 @@
 }
 
 .thead {
-  border-top: 1px solid palette(gray,dark);
-  border-bottom: 1px solid palette(gray,dark);
+  border-top: 1px solid darken(palette(gray, x-dark), 10%);
+  border-bottom: 1px solid darken(palette(gray, x-dark), 10%);
 
   &__th {
     text-align: left;
     padding: .5em;
     font-weight: 500;
     letter-spacing: .03em;
+    color: darken(palette(gray, x-dark), 10%);
 
     &.sortable {
       position: relative;
       cursor: pointer;
       a {
-        color: palette(gray, x-dark);
+        margin-left: 8px;
+        color: darken(palette(gray, x-dark), 10%);
         text-decoration: none;
       }
 
       &:before {
         content: '';
-        background-image: url('/assets/images/sort.svg');
+        background-image: url('data:image/svg+xml;charset=utf-8,
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="14" viewBox="0 0 8 14">
+<path fill="#444444" d="M8 8.5q0 0.203-0.148 0.352l-3.5 3.5q-0.148 0.148-0.352 0.148t-0.352-0.148l-3.5-3.5q-0.148-0.148-0.148-0.352t0.148-0.352 0.352-0.148h7q0.203 0 0.352 0.148t0.148 0.352zM8 5.5q0 0.203-0.148 0.352t-0.352 0.148h-7q-0.203 0-0.352-0.148t-0.148-0.352 0.148-0.352l3.5-3.5q0.148-0.148 0.352-0.148t0.352 0.148l3.5 3.5q0.148 0.148 0.148 0.352z"></path>
+</svg>
+');
         background-size: contain;
         background-repeat: no-repeat;
         position: absolute;
-        opacity: .5;
+        opacity: .7;
         @include wh(8px, 14px);
-        left: -8px;
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
       }
