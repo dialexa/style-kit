@@ -10,6 +10,8 @@
   &__th {
     text-align: left;
     padding: .5em;
+    font-weight: 500;
+    letter-spacing: .03em;
 
     &.sortable {
       position: relative;
