@@ -29,7 +29,7 @@ input[type="color"] {
   border: 1px solid $gray;
   border-radius: 3px;
   outline: none;
-  color: palette(gray, x-dark);
+  color: palette(gray, xx-dark);
 
   &.has-disclaimer {
     margin-bottom: 0;
@@ -111,7 +111,7 @@ fieldset {
 }
 
 %label {
-  color: $gray;
+  color: palette(gray,xx-dark);
   text-transform: uppercase;
 }
 
@@ -123,11 +123,7 @@ label {
   &--sm {
     @extend %label;
     font-size: .75em;
-    color: palette(gray,x-dark);
     letter-spacing: 0;
-  }
-  &--md {
-
   }
   &--lg {
     font-size: 1.3em;
@@ -135,7 +131,6 @@ label {
 
   &--bold {
     @extend %label;
-    color: palette(gray, x-dark);
     font-weight: 600;
   }
 }
