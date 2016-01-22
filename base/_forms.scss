@@ -34,6 +34,10 @@ input[type="color"] {
   &.has-disclaimer {
     margin-bottom: 0;
   }
+
+  &:focus {
+    box-shadow: #2D9BE3 0 1px 1px 0;
+  }
 }
 
 // Remove expand arrow select menus IE
@@ -50,6 +54,7 @@ input[type="search"] {
   // Override content-box in normalize
   box-sizing: border-box;
 }
+
 input[type="search"]:focus {
   text-align: left;
 }
