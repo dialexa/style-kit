@@ -1,4 +1,4 @@
-@import 'tools/mixins';
+@include 'tools/mixins';
 
 // ------------------------
 // POSITIONING
@@ -19,7 +19,6 @@ $dirs: ( "top" "bottom" "left" "right" "none" );
     } @else {
       .#{$declaration}-#{$dir} {
         #{$declaration}-#{$dir}: 1em !important;
-        // debugger
 
         @each $pixel in $pixels {
           &--#{$pixel} {
