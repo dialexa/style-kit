@@ -7,10 +7,17 @@ CSS/ SASS Style base for Dialexa projects
 
 You will need the following things properly installed on your computer.
 
-* [SASS](http://sass-lang.com/install) - gem install sass
+* [SASS](http://sass-lang.com/install) - `gem install sass`
 
-<!--
+
 ## Installation
 
-* `npm install --save-dev dialexa-style-guide`
-* Add path for `app.scss` to SASS grunt build or ember-cli-build -->
+* `npm install --save @dialexa/dialexa-style-guide`
+
+
+## Importing into your project
+
+From here, there are a few ways to import the styles...
+
+- 1. A built and prefixed CSS file is included in the project, at `dist/dialexa-style-guide.css`.
+- 2. Add the path for `app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
