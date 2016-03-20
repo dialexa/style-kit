@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "CSS/ SASS Style base for Dialexa projects",
   "scripts": {
-    "css:build": "node-sass --include-path ./ app.scss dist/dialexa-style-guide.css",
+    "css:build": "node-sass --include-path style-guide/ style-guide/app.scss dist/dialexa-style-guide.css",
     "css:prefix": "postcss --use autoprefixer -b 'last 2 versions' dist/*.css -d dist/",
     "build-dist": "npm run css:build && npm run css:prefix"
   },
