@@ -1,24 +1,30 @@
+@import 'tools/mixins';
+
 // ------------------------
 // POSITIONING
 // ------------------------
 
+$declarations: ( "padding" "margin" );
 $pixels: ( "6" "12" "18" "24" "32" "48" "64" );
-$dirs: ( "top" "bottom" "left" "right" "none");
+$dirs: ( "top" "bottom" "left" "right" "none" );
 
-@each $dir in $dirs {
-  @if $dir == "none" {
-    @each $pixel in $pixels {
-      .margin--#{$pixel} {
-        margin: #{$pixel}px !important;
-      }
-    }
-  } @else {
-    .margin-#{$dir} {
-      margin-#{$dir}: 1em !important;
-
+@each $declaration in $declarations {
+  @each $dir in $dirs {
+    @if $dir == "none" {
       @each $pixel in $pixels {
-        &--#{$pixel} {
-          margin-#{$dir}: #{$pixel}px !important;
+        .#{$declaration}--#{$pixel} {
+          #{$declaration}: #{$pixel}px !important;
+        }
+      }
+    } @else {
+      .#{$declaration}-#{$dir} {
+        #{$declaration}-#{$dir}: 1em !important;
+        // debugger
+
+        @each $pixel in $pixels {
+          &--#{$pixel} {
+            #{$declaration}-#{$dir}: #{$pixel}px !important;
+          }
         }
       }
     }

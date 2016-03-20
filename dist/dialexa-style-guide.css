@@ -1552,6 +1552,95 @@ label {
 .input-select__row--typeahead .type-ahead__input-wrapper {
   border-radius: 3px 0 0 3px; }
 
+.padding-top {
+  padding-top: 1em !important; }
+  .padding-top--6 {
+    padding-top: 6px !important; }
+  .padding-top--12 {
+    padding-top: 12px !important; }
+  .padding-top--18 {
+    padding-top: 18px !important; }
+  .padding-top--24 {
+    padding-top: 24px !important; }
+  .padding-top--32 {
+    padding-top: 32px !important; }
+  .padding-top--48 {
+    padding-top: 48px !important; }
+  .padding-top--64 {
+    padding-top: 64px !important; }
+
+.padding-bottom {
+  padding-bottom: 1em !important; }
+  .padding-bottom--6 {
+    padding-bottom: 6px !important; }
+  .padding-bottom--12 {
+    padding-bottom: 12px !important; }
+  .padding-bottom--18 {
+    padding-bottom: 18px !important; }
+  .padding-bottom--24 {
+    padding-bottom: 24px !important; }
+  .padding-bottom--32 {
+    padding-bottom: 32px !important; }
+  .padding-bottom--48 {
+    padding-bottom: 48px !important; }
+  .padding-bottom--64 {
+    padding-bottom: 64px !important; }
+
+.padding-left {
+  padding-left: 1em !important; }
+  .padding-left--6 {
+    padding-left: 6px !important; }
+  .padding-left--12 {
+    padding-left: 12px !important; }
+  .padding-left--18 {
+    padding-left: 18px !important; }
+  .padding-left--24 {
+    padding-left: 24px !important; }
+  .padding-left--32 {
+    padding-left: 32px !important; }
+  .padding-left--48 {
+    padding-left: 48px !important; }
+  .padding-left--64 {
+    padding-left: 64px !important; }
+
+.padding-right {
+  padding-right: 1em !important; }
+  .padding-right--6 {
+    padding-right: 6px !important; }
+  .padding-right--12 {
+    padding-right: 12px !important; }
+  .padding-right--18 {
+    padding-right: 18px !important; }
+  .padding-right--24 {
+    padding-right: 24px !important; }
+  .padding-right--32 {
+    padding-right: 32px !important; }
+  .padding-right--48 {
+    padding-right: 48px !important; }
+  .padding-right--64 {
+    padding-right: 64px !important; }
+
+.padding--6 {
+  padding: 6px !important; }
+
+.padding--12 {
+  padding: 12px !important; }
+
+.padding--18 {
+  padding: 18px !important; }
+
+.padding--24 {
+  padding: 24px !important; }
+
+.padding--32 {
+  padding: 32px !important; }
+
+.padding--48 {
+  padding: 48px !important; }
+
+.padding--64 {
+  padding: 64px !important; }
+
 .margin-top {
   margin-top: 1em !important; }
   .margin-top--6 {
