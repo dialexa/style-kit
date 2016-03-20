@@ -1,0 +1,25 @@
+{
+  "name": "dialexa-style-guide",
+  "version": "0.1.0",
+  "description": "CSS/ SASS Style base for Dialexa projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dialexa/dialexa-style-guide.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "style-guide",
+    "dialexa"
+  ],
+  "author": "Chris Miller <chris@dialexa.com> (http://dialexa.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dialexa/dialexa-style-guide/issues"
+  },
+  "homepage": "https://github.com/dialexa/dialexa-style-guide#readme"
+}
