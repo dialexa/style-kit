@@ -1,10 +1,16 @@
 {
-  "name": "dialexa-style-guide",
-  "version": "0.1.0",
+  "name": "@dialexa/dialexa-style-guide",
+  "version": "0.2.0",
   "description": "CSS/ SASS Style base for Dialexa projects",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css:build": "node-sass --include-path ./ app.scss dist/dialexa-style-guide.css",
+    "css:prefix": "postcss --use autoprefixer -b 'last 2 versions' dist/*.css -d dist/",
+    "build-dist": "npm run css:build && npm run css:prefix"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.5.1"
   },
   "repository": {
     "type": "git",
@@ -21,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/dialexa/dialexa-style-guide/issues"
   },
-  "homepage": "https://github.com/dialexa/dialexa-style-guide#readme"
+  "homepage": "https://github.com/dialexa/dialexa-style-guide#readme",
+  "main": "index.js"
 }
