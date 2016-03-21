@@ -13,7 +13,8 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 <!-- * `npm install --save @dialexa/dialexa-style-guide` -->
-* Include this line in your bower dependencies...
+Include this line in your bower dependencies...
+
 ```
 "dialexa-style-guide": "https://github.com/dialexa/dialexa-style-guide.git"
 ```
@@ -21,7 +22,7 @@ You will need the following things properly installed on your computer.
 
 ## Importing into your project
 
-From here, there are a few ways to import the styles...
+There are a few ways to import the styles...
 
-- 1. A built and prefixed CSS file is included in the project, at `dist/dialexa-style-guide.css`.
-- 2. Add the path for `app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
+1. A built and prefixed CSS file can be found at `dist/dialexa-style-guide.css`.
+2. Add the path for `app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
