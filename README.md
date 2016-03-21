@@ -12,7 +12,11 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `npm install --save @dialexa/dialexa-style-guide`
+<!-- * `npm install --save @dialexa/dialexa-style-guide` -->
+* Include this line in your bower dependencies...
+```
+"dialexa-style-guide": "https://github.com/dialexa/dialexa-style-guide.git"
+```
 
 
 ## Importing into your project
