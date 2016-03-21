@@ -2,11 +2,12 @@
 
 $breakpoints: (
   'palm' '(max-width: 480px)',
-  'lap' '(min-width: 481px) and (max-width: 1023px)',
+  'portrait' '(max-width: 767px)',
   'portable' '(max-width: 1023px)',
+  'lap' '(min-width: 481px) and (max-width: 1023px)',
   'mid' '(min-width: 768px)',
   'desk' '(min-width: 1024px)',
-  'ipad' '(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)'
+  'ipad' '(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)'
 );
 
 

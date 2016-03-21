@@ -26,15 +26,14 @@ $palettes: (
     base      : $gray,
     dark      : darken($gray, 25%),
     x-dark    : darken($gray, 40%),
-    xx-dark    : darken($gray, 50%),
+    xx-dark    : darken($gray, 50%)
   ),
   blue: (
     x-light   : lighten($blue, 20%),
     light     : lighten($blue, 10%),
     base      : $blue,
     dark      : darken($blue, 10%),
-    x-dark    : darken($blue, 20%),
-    dx-blue   : $dx-blue
+    x-dark    : darken($blue, 20%)
   ),
   green: (
     x-light   : lighten($green, 20%),
@@ -46,7 +45,7 @@ $palettes: (
   dialexa: (
     blue      : $dx-blue,
     gold      : $dx-gold,
-    gray      : $dx-gray,
+    gray      : $dx-gray
   ),
   brands: (
     facebook  : #3b5998,
@@ -54,7 +53,6 @@ $palettes: (
     prime     : $orange
   )
 );
-
 
 @function palette($palette: 'gray', $shade: 'base') {
   @return map-get(map-get($palettes, $palette), $shade);
@@ -81,7 +79,6 @@ $ui-colors: (
   fulfilled     : $green,
   rejected      : $red
 );
-
 
 .inactive {
   opacity: .4;
