@@ -9,7 +9,7 @@ CSS/ SASS Style base for Dialexa projects
 Include this line in your bower dependencies...
 
 ```
-"dialexa-style-guide": "https://github.com/dialexa/dialexa-style-guide.git"
+"dialexa-style-kit": "https://github.com/dialexa/dialexa-style-kit.git"
 ```
 
 
@@ -17,5 +17,5 @@ Include this line in your bower dependencies...
 
 There are a few ways to import the styles...
 
-1. A built and prefixed CSS file can be found at `dist/dialexa-style-guide.css`.
+1. A built and prefixed CSS file can be found at `dist/dialexa-style-kit.css`.
 2. Add the path for `app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
