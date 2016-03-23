@@ -5,11 +5,11 @@ CSS/ SASS Style base for Dialexa projects
 
 ## Installation
 
-<!-- * `npm install --save @dialexa/dialexa-style-guide` -->
+<!-- * `npm install --save @dialexa/dialexa-style-kit` -->
 Include this line in your bower dependencies...
 
 ```
-"dialexa-style-kit": "https://github.com/dialexa/dialexa-style-kit.git"
+"dialexa-style-kit": "git://github.com/dialexa/dialexa-style-kit.git#81e5eb3"
 ```
 
 
