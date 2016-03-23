@@ -415,7 +415,7 @@ h2 {
   font-size: 3em; }
 
 h3 {
-  font-size: 1.6em; }
+  font-size: 2em; }
 
 h4 {
   font-size: 1.5em;
@@ -3526,7 +3526,7 @@ label {
   position: relative; }
   .input-col--select:after {
     content: '';
-    background-image: url("/assets/images/arrow-down2.svg");
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">\a     <path d="M15.483 8.563c-0.407 0.418-4.695 4.503-4.695 4.503-0.218 0.223-0.503 0.334-0.788 0.334s-0.571-0.111-0.788-0.334c0 0-4.288-4.085-4.696-4.503s-0.435-1.169 0-1.616c0.436-0.446 1.043-0.481 1.576 0l3.908 3.748 3.907-3.747c0.534-0.481 1.142-0.446 1.576 0 0.436 0.446 0.409 1.198 0 1.615z" fill="#000000"></path>\a     </svg>');
     position: absolute;
     right: .9em;
     top: 2.6em;
@@ -4219,7 +4219,7 @@ label {
       background-repeat: no-repeat; }
     .tooltip.wormhole:after {
       content: "";
-      background: 15px/15px no-repeat url("images/invalid.svg");
+      background: 15px/15px no-repeat url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">\a       <path fill="#444444" d="M18.984 6.422l-5.578 5.578 5.578 5.578-1.406 1.406-5.578-5.578-5.578 5.578-1.406-1.406 5.578-5.578-5.578-5.578 1.406-1.406 5.578 5.578 5.578-5.578z"></path>\a       </svg>\a ');
       background-position: 50% 50%;
       background-color: #fff;
       position: absolute;
