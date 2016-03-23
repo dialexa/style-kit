@@ -1,9 +1,9 @@
 {
-  "name": "@dialexa/dialexa-style-guide",
+  "name": "@dialexa/dialexa-style-kit",
   "version": "0.2.0",
-  "description": "CSS/ SASS Style base for Dialexa projects",
+  "description": "CSS/ SASS Style kit to set up Dialexa projects",
   "scripts": {
-    "css:build": "node-sass --include-path style-guide/ style-guide/app.scss dist/dialexa-style-guide.css",
+    "css:build": "node-sass --include-path style-kit/ style-kit/app.scss dist/dialexa-style-kit.css",
     "css:prefix": "postcss --use autoprefixer -b 'last 2 versions' dist/*.css -d dist/",
     "build-dist": "npm run css:build && npm run css:prefix"
   },
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dialexa/dialexa-style-guide.git"
+    "url": "git+https://github.com/dialexa/dialexa-style-kit.git"
   },
   "keywords": [
     "sass",
@@ -25,8 +25,8 @@
   "author": "Chris Miller <chris@dialexa.com> (http://dialexa.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dialexa/dialexa-style-guide/issues"
+    "url": "https://github.com/dialexa/dialexa-style-kit/issues"
   },
-  "homepage": "https://github.com/dialexa/dialexa-style-guide#readme",
+  "homepage": "https://github.com/dialexa/dialexa-style-kit#readme",
   "main": "index.js"
 }

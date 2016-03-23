@@ -1,13 +1,6 @@
-# Dialexa Style Guide
+# Dialexa Style Kit
 
 CSS/ SASS Style base for Dialexa projects
-
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [SASS](http://sass-lang.com/install) - `gem install sass`
 
 
 ## Installation
