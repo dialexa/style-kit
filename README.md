@@ -9,13 +9,16 @@ CSS/ SASS Style base for Dialexa projects
 Include this line in your bower dependencies...
 
 ```
-"dialexa-style-kit": "git://github.com/dialexa/dialexa-style-kit.git#81e5eb3"
+"dialexa-style-kit": "https://github.com/dialexa/style-kit.git"
 ```
 
 
 ## Importing into your project
 
-There are a few ways to import the styles...
+There are a couple of ways to import the styles...
 
-1. A built and prefixed CSS file can be found at `dist/dialexa-style-kit.css`.
-2. Add the path for `app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
+1. Add the path for `{dependenciesFolder}@dialexa/style-kit/style-kit/app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
+  > *Recommended Method.* You will have full usage of the Style Kit's SASS helpers.
+
+2. A built and prefixed CSS file can be found at `dist/dialexa-style-kit.css`.
+  > *DISCLAIMER:* This method will not allow the use of the Kit's SASS helpers within your custom SASS.
