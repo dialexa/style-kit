@@ -7,7 +7,7 @@ CSS/ SASS Style base for Dialexa projects
 
 ### NPM
 ```
-npm install --save @dialexa/dialexa-style-kit
+npm install --save @dialexa/style-kit
 ```
 
 
