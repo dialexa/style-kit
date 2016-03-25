@@ -19,10 +19,10 @@ section {
   $portraitEm: $em * 0.75;
 
   .section--#{$size} {
-    padding: #{$em}em;
+    padding: #{$em}em 0;
 
     @include gmq(portrait) {
-      padding: #{$portraitEm}em;
+      padding: #{$portraitEm}em 0;
     }
   }
 }
