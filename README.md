@@ -5,7 +5,7 @@ CSS/ SASS Style base for Dialexa projects
 
 ## Installation
 
-**NPM**
+### NPM
 ```
 npm install --save @dialexa/dialexa-style-kit
 ```
@@ -13,7 +13,7 @@ npm install --save @dialexa/dialexa-style-kit
 
 _or_
 
-**Bower***
+### Bower
 Include this line in your bower dependencies...
 ```
 "dialexa-style-kit": "https://github.com/dialexa/style-kit.git"
