@@ -14,6 +14,9 @@ Code or documentation changes are welcome and should follow the guidelines below
 
 * [Fork this repository][working-with-forks] and create a new branch for your changes
 * Make your changes and don't be afraid to ask questions!
+* Build your changes into the `dist/` folder before submitting a PR.
+  * `npm install`
+  * `npm run build-dist`
 * Once finished, [submit a Pull Request][new-pull-request] for your changes
   * All Pull Requests should be made to the `master` branch
   * Make sure your branch is up to date with the upstream repository (if not, perform a downstream merge and resolve any merge conflicts)

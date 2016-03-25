@@ -1,5 +1,5 @@
 {
-  "name": "@dialexa/dialexa-style-kit",
+  "name": "@dialexa/style-kit",
   "version": "0.2.0",
   "description": "CSS/ SASS Style kit to set up Dialexa projects",
   "scripts": {
