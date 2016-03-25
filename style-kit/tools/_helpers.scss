@@ -136,4 +136,10 @@ $dirs: ( "top" "bottom" "left" "right" "none" );
       }
     }
   }
+
+  @each $theme, $color in $ui-colors {
+    &--color--#{$theme} {
+      color: $color !important;
+    }
+  }
 }
