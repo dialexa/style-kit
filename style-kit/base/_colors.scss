@@ -1,16 +1,16 @@
-// COLORS
-
-// Set up these basic colors, and recommended usage is to lighten and darken within the palettes.
+// -------------------------------------
+// Default Color Scheme for Style Kit
+// -------------------------------------
 
 $white    : #fff;
-$gray     : #c0c2c1;
+$gray     : #707070;
 
 $red      : #F64744;
-$orange   : #FB822C;
-$green    : #4BC16B;
-$blue     : #1EAAF1;
+$orange   : #ff4621;
+$green    : #4EBEA5;
+$blue     : #0066ff;
 $navy     : #2D4F73;
-$yellow   : #EC9F3C;
+$yellow   : #ffc864;
 
 $dx-blue  : #14282D;
 $dx-gold  : #D6B064;
@@ -24,9 +24,9 @@ $palettes: (
     x-light   : lighten($gray, 20%),
     light     : lighten($gray, 10%),
     base      : $gray,
-    dark      : darken($gray, 25%),
-    x-dark    : darken($gray, 40%),
-    xx-dark    : darken($gray, 50%)
+    dark      : darken($gray, 15%),
+    x-dark    : #383434,
+    xx-dark   : darken($gray, 30%),
   ),
   blue: (
     x-light   : lighten($blue, 20%),
@@ -48,9 +48,7 @@ $palettes: (
     gray      : $dx-gray
   ),
   brands: (
-    facebook  : #3b5998,
-    parkhub   : $blue,
-    prime     : $orange
+    facebook  : #3b5998
   )
 );
 
@@ -59,22 +57,17 @@ $palettes: (
 }
 
 $ui-colors: (
-  dark          : palette(gray, dark),
-  x-dark        : palette(gray, x-dark),
   error         : $red,
-  alarm         : $red,
   warning       : $orange,
-  normal        : $orange,
+  normal        : $blue,
   success       : $green,
   saving        : lighten($green,10%),
   info          : $blue,
-  gold          : $yellow,
   white         : $white,
   transparent   : rgba($white, 0),
   disabled      : $gray,
   active        : $green,
-  danger        : $red,
-  default       : $orange,
+  default       : $blue,
   pending       : $gray,
   fulfilled     : $green,
   rejected      : $red

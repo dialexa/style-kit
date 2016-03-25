@@ -6,6 +6,7 @@ html {
   height: 100%;
   font-size: 100%;
   text-size-adjust: 100%;
+  min-width: 100%;
 
   @media (max-width: 67.0625em) {
     font-size: 95%;
@@ -31,7 +32,6 @@ html,body, .container {
 }
 
 body {
-  background: palette(gray,xx-light);
   line-height: 1.4;
   transition: transform .5s cubic-bezier(.47,-0.71,.45,1.65);
   overflow-x: hidden;
@@ -39,11 +39,13 @@ body {
 
 .site {
   min-height: 100vh;
-  display: flex;
+  min-width: 100%;
+  overflow-x: hidden;
 
   &-content {
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
+    min-width: 100%;
   }
 }
 
@@ -53,12 +55,8 @@ body {
 
 .container {
   position: relative;
-  max-width: 70em;
+  max-width: 80em;
   margin: 0 auto;
-  padding: 0 1em;
-
-  &--push-down.container {
-    height: auto;
-    margin-top: 2em;
-  }
+  padding: 0 2em;
+  padding: 0 4vw;
 }
