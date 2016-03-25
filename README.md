@@ -26,6 +26,8 @@ There are a couple of ways to import the styles...
 
 1. Add the path for `{dependency_path}/style-kit/app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
   > **Recommended Method.** You will have full usage of the Style Kit's SASS helpers.
+  >
+  > Note: When npm installing, you may need to add `node_modules/` to your `includePath` in your sass compiler/ loader.
 
 2. A built and prefixed CSS file can be found at `{dependency_path}/dist/dialexa-style-kit.css`.
   > **DISCLAIMER:** This method will not allow the use of the Kit's SASS helpers within your custom SASS. You will only have access to className helpers in your markup.
