@@ -1364,6 +1364,48 @@ ul {
 .text--weight--900 {
   font-weight: 900; }
 
+.text--color--error {
+  color: #F64744 !important; }
+
+.text--color--warning {
+  color: #ff4621 !important; }
+
+.text--color--normal {
+  color: #0066ff !important; }
+
+.text--color--success {
+  color: #4EBEA5 !important; }
+
+.text--color--saving {
+  color: #73ccb8 !important; }
+
+.text--color--info {
+  color: #0066ff !important; }
+
+.text--color--white {
+  color: #fff !important; }
+
+.text--color--transparent {
+  color: rgba(255, 255, 255, 0) !important; }
+
+.text--color--disabled {
+  color: #c0c2c1 !important; }
+
+.text--color--active {
+  color: #4EBEA5 !important; }
+
+.text--color--default {
+  color: #0066ff !important; }
+
+.text--color--pending {
+  color: #c0c2c1 !important; }
+
+.text--color--fulfilled {
+  color: #4EBEA5 !important; }
+
+.text--color--rejected {
+  color: #F64744 !important; }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -1618,28 +1660,28 @@ section {
       padding: 4em 0; } }
 
 .section--sm {
-  padding: 1em; }
+  padding: 1em 0; }
   @media only screen and (max-width: 767px) {
     .section--sm {
-      padding: 0.75em; } }
+      padding: 0.75em 0; } }
 
 .section--md {
-  padding: 3em; }
+  padding: 3em 0; }
   @media only screen and (max-width: 767px) {
     .section--md {
-      padding: 2.25em; } }
+      padding: 2.25em 0; } }
 
 .section--lg {
-  padding: 6em; }
+  padding: 6em 0; }
   @media only screen and (max-width: 767px) {
     .section--lg {
-      padding: 4.5em; } }
+      padding: 4.5em 0; } }
 
 .section--xl {
-  padding: 10em; }
+  padding: 10em 0; }
   @media only screen and (max-width: 767px) {
     .section--xl {
-      padding: 7.5em; } }
+      padding: 7.5em 0; } }
 
 .section--center [class*='section__header'] {
   text-align: center; }
