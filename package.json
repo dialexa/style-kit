@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dialexa/dialexa-style-kit.git"
+    "url": "git+https://github.com/dialexa/style-kit.git"
   },
   "keywords": [
     "sass",
@@ -22,11 +22,13 @@
     "style-kit",
     "dialexa"
   ],
-  "author": "Chris Miller <chris@dialexa.com> (http://dialexa.com)",
+  "author": "Dialexa",
+  "contributors": [
+    "Chris Miller <chris@dialexa.com>"
+  ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dialexa/dialexa-style-kit/issues"
+    "url": "https://github.com/dialexa/style-kit/issues"
   },
-  "homepage": "https://github.com/dialexa/dialexa-style-kit#readme",
-  "main": "index.js"
+  "homepage": "https://github.com/dialexa/style-kit#readme"
 }
