@@ -18,7 +18,7 @@ Include this line in your bower dependencies...
 There are a couple of ways to import the styles...
 
 1. Add the path for `{dependenciesFolder}@dialexa/style-kit/style-kit/app.scss` to your build pipeline, to build/ concat/ prefix as you see fit.
-  > *Recommended Method.* You will have full usage of the Style Kit's SASS helpers.
+  > **Recommended Method.** You will have full usage of the Style Kit's SASS helpers.
 
 2. A built and prefixed CSS file can be found at `dist/dialexa-style-kit.css`.
-  > *DISCLAIMER:* This method will not allow the use of the Kit's SASS helpers within your custom SASS.
+  > **DISCLAIMER:** This method will not allow the use of the Kit's SASS helpers within your custom SASS. You will only have access to className helpers in your markup.
