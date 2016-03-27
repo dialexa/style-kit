@@ -1,0 +1,22 @@
+{
+  "name": "@dialexa/style-kit",
+  "description": "CSS/ SASS Style kit to set up Dialexa projects",
+  "main": "dist/dialexa-style-kit.scss",
+  "authors": [
+    "Chris Miller <chris@dialexa.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "sass",
+    "css",
+    "style-kit",
+    "dialexa"
+  ],
+  "homepage": "https://github.com/dialexa/style-kit",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
