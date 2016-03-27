@@ -2,15 +2,15 @@
 // Default Color Scheme for Style Kit
 // -------------------------------------
 
-$white    : #fff;
-$gray     : #c0c2c1;
+$white    : #FFF;
+$gray     : #C1C4C6;
 
 $red      : #FC2531;
-$orange   : #ff4621;
+$orange   : #FF4621;
 $green    : #39D32D;
-$blue     : #0066ff;
+$blue     : #0066FF;
 $navy     : #2D4F73;
-$yellow   : #ffc864;
+$yellow   : #FFC864;
 
 $dx-blue  : #14282D;
 $dx-gold  : #D6B064;
@@ -20,13 +20,13 @@ $dx-gray  : #525252;
 // Color Palette Modifiers
 $palettes: (
   gray: (
-    xx-light  : #f8f8f8,
-    x-light   : lighten($gray, 20%),
+    xx-light  : #F8F8F8,
+    x-light   : lighten($gray, 22%),
     light     : lighten($gray, 10%),
     base      : $gray,
     dark      : darken($gray, 15%),
-    x-dark    : #383434,
-    xx-dark   : darken($gray, 30%),
+    x-dark    : #353637,
+    xx-dark   : darken($gray, 34%),
   ),
   blue: (
     x-light   : lighten($blue, 20%),
@@ -48,7 +48,7 @@ $palettes: (
     gray      : $dx-gray
   ),
   brands: (
-    facebook  : #3b5998
+    facebook  : #3B5998
   )
 );
 

@@ -43,7 +43,7 @@ h4,
 h5,
 h6 {
   @include font-primary;
-  color: palette(gray,xx-dark);
+  color: palette(gray,x-dark);
   margin: 0;
   font-weight: 300;
   line-height: $size-base * 1.5;
@@ -79,7 +79,7 @@ h6 {
 
 // Paragraphs // ----------------------------------------------------------------------------------------
 p {
-  color: palette(gray,dark);
+  color: palette(gray, x-dark);
   font-size: $size-base;
   line-height: $size-base * 1.5;
   margin-bottom: 1.5em;
@@ -95,7 +95,7 @@ a {
 
   &:hover,
   &:focus {
-    color: palette(dialexa, gold);
+    color: rgba($blue, .7);
   }
 
   &:active,
