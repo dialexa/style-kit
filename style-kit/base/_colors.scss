@@ -3,6 +3,7 @@
 // -------------------------------------
 
 $white    : #FFF;
+$black    : #000;
 $gray     : #C1C4C6;
 
 $red      : #FC2531;
@@ -12,16 +13,25 @@ $blue     : #0066FF;
 $navy     : #2D4F73;
 $yellow   : #FFC864;
 
-$dx-blue  : #14282D;
-$dx-gold  : #D6B064;
-$dx-gray  : #525252;
+
+// Dialexa Color Variables
+//=========================================
+$dx-galaxy-blue     : #14282D;
+$dx-sultan-gold     : #D6B064;
+$dx-neutral-gray    : #D6D7D9;
+$dx-neutral-dark    : #C2C3C5;
+$dx-neutral-light   : #F3F3F3;
+$dx-body-gray       : #525252;
+$dx-green           : #98CE80;
+$dx-orange-red      : #F0553D;
 
 
 // Color Palette Modifiers
+//=========================================
 $palettes: (
   gray: (
     xx-light  : #F8F8F8,
-    x-light   : lighten($gray, 22%),
+    x-light   : lighten($gray, 18%),
     light     : lighten($gray, 10%),
     base      : $gray,
     dark      : darken($gray, 15%),
@@ -43,9 +53,14 @@ $palettes: (
     x-dark    : darken($green, 20%)
   ),
   dialexa: (
-    blue      : $dx-blue,
-    gold      : $dx-gold,
-    gray      : $dx-gray
+    galaxy-blue       : $dx-galaxy-blue,
+    sultan-gold       : $dx-sultan-gold,
+    neutral-gray      : $dx-neutral-gray,
+    neutral-dark      : $dx-neutral-dark,
+    neutral-light     : $dx-neutral-light,
+    body-gray         : $dx-body-gray,
+    green             : $dx-green,
+    orange-red        : $dx-orange-red
   ),
   brands: (
     facebook  : #3B5998
@@ -56,6 +71,9 @@ $palettes: (
   @return map-get(map-get($palettes, $palette), $shade);
 }
 
+
+// UI Color Scheme
+//=========================================
 $ui-colors: (
   error         : $red,
   warning       : $orange,
