@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "CSS/ SASS Style kit to set up Dialexa projects",
   "scripts": {
-    "css:build": "node-sass --include-path style-kit/ style-kit/app.scss dist/dialexa-style-kit.css",
+    "css:build": "node-sass --output-style=compact --include-path style-kit/ style-kit/app.scss dist/dialexa-style-kit.css",
     "css:prefix": "postcss --use autoprefixer -b 'last 2 versions' dist/*.css -d dist/",
     "build-dist": "npm run css:build && npm run css:prefix"
   },
@@ -20,6 +20,7 @@
     "sass",
     "css",
     "style-kit",
+    "dialexa-ui",
     "dialexa"
   ],
   "author": "Dialexa",
