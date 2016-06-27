@@ -1,44 +1,26 @@
-.overlay {
-  @include s-overlay(black,.3);
-  z-index: $zIndex-10;
-  transition: opacity .25s;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-  &--show {
-    opacity: 1;
-  }
-
-  &--solid--white {
-    background: $white;
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
-  }
-
-  .btn-group {
-    position: relative;
-    padding: 1em 0;
-    bottom: inherit;
-  }
-}
-
-.confirm {
-  &__title,
-  &__desc {
-    text-align: center;
-  }
-}
-
 $modal-border-radius: 3px;
+$modal-sizes: (
+  small: (
+    class-name: 'sm',
+    width: 375px,
+    max-height: 400px
+  ),
+  medium: (
+    class-name: 'md',
+    width: 450px,
+    max-height: 400px
+  ),
+  large: (
+    class-name: 'lg',
+    width: 800px,
+    max-height: 800px
+  ),
+  x-large: (
+    class-name: 'x-lg',
+    width: calc(100vw - 2em),
+    max-height: calc(100vh - 2em)
+  )
+);
 
 %modal {
   @include center();
@@ -46,8 +28,6 @@ $modal-border-radius: 3px;
   background: white;
   box-shadow: 0 3px 15px rgba(0,0,0,.25);
   border-radius: $modal-border-radius;
-  min-width: 18em;
-  max-width: 480px;
   @include pop();
   z-index: $zIndex-10;
 
@@ -104,8 +84,9 @@ $modal-border-radius: 3px;
   }
 
   &__body {
-    max-height: 60vh;
     overflow: scroll;
+    max-height: 390px;
+    overflow: auto;
     text-align: center;
 
     .container {
@@ -120,9 +101,18 @@ $modal-border-radius: 3px;
   &__footer {
     display: flex;
 
-    .btn {
+    .modal-btn {
+      border: none;
       flex: 1;
-      color: $white;
+      padding: 1em;
+      border-top: 1px solid palette(gray, light) !important;
+      color: palette(gray, x-dark);
+      background: $white;
+      font-weight: 500;
+
+      & + & {
+        border-left: 1px solid palette(gray, light);
+      }
 
       &:first-child {
         border-radius: 0 0 0 $modal-border-radius;
@@ -151,5 +141,18 @@ $modal-border-radius: 3px;
     @include gmq(palm) {
       font-size: .875em;
     }
+  }
+}
+
+// Modal Sizes
+//====================================
+@each $item, $size in $modal-sizes {
+  $class: map-get($size, class-name);
+  $width: map-get($size, width);
+  $maxHeight: map-get($size, max-height);
+
+  .modal--#{$class} {
+    width: $width;
+    max-height: $maxHeight;
   }
 }
