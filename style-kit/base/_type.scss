@@ -34,17 +34,84 @@ $font-family--monospace: 'Source Code Pro';
 }
 
 
-// Headers // -------------------------------------------------------------------------------------------
+// Font Sizes
+//====================================================
+$font-sizes: (
+  body: (
+    xx-small: 0.625em,
+    x-small: 0.75em,
+    small: 0.875em,
+    default: 1em,
+    large: 1.125em,
+    x-large: 1.5em,
+  ),
+
+  title: (
+    x-small: 12,
+    small: 16,
+    default: 18,
+    large: 21,
+    x-large: 32,
+    xx-large: 40,
+    jumbo: 60
+  )
+);
+
+@function font-size($font-size: 'body', $size: 'default') {
+  @return map-get(map-get($font-sizes, $font-size), $size);
+}
+
+
+// Line Heights
+//====================================================
+$line-heights: (
+  body: (
+    x-small: .5,
+    small: 1,
+    default: 1.5,
+    large: 1.875,
+    x-large: 2
+  ),
+
+  title: (
+    x-small: 1,
+    small: 1.1,
+    default: 1.5,
+    medium: 1.875,
+    large: 2,
+   )
+);
+
+@function line-height($line-height: 'body', $size: 'default') {
+  @return map-get(map-get($line-heights, $line-height), $size);
+}
+
+
+// Font Weights
+//====================================================
+$font-weights: (
+  light: 100,
+  regular: 300,
+  medium: 500,
+  heavy: 600,
+  x-heavy: 700
+)!default;
+
+@function font-weight($weight: 300) {
+  @return map-get($font-weights, $weight);
+}
+
+
+// Headers
+//====================================================
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @include font-primary;
-  color: palette(gray,x-dark);
   margin: 0;
-  font-weight: 300;
+  font-weight: font-weight(regular);
   line-height: $size-base * 1.5;
 
   @media (max-width: 64em) {
@@ -64,9 +131,6 @@ h3 {
 }
 h4 {
   font-size: $size-base * 1.5;
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 h5 {
   font-size: $size-base * 1.25;
@@ -76,18 +140,17 @@ h6 {
 }
 
 
-// Paragraphs // ----------------------------------------------------------------------------------------
+// Paragraphs
+//====================================================
 p {
-  color: palette(gray, x-dark);
   font-size: $size-base;
   line-height: $size-base * 1.5;
-  margin-bottom: 1.5em;
 }
 
 
-// Links // ---------------------------------------------------------------------------------------------
+// Links
+//====================================================
 a {
-  @include font-primary;
   color: $blue;
   text-decoration: underline;
   transition: all .1s ease-in-out;
@@ -115,7 +178,8 @@ a {
 }
 
 
-// Content Block Elements // ---------------------------------------------------------------------------
+// Content Block Elements
+//====================================================
 dl,
 menu,
 ol,
@@ -125,7 +189,8 @@ pre {
   margin: 0 0 $size-base;
 }
 
-// Lists // -----------------------------------------------------------------------------------------------
+// Lists
+//====================================================
 menu,
 ol,
 ul {
