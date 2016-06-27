@@ -21,22 +21,23 @@ input[type="tel"],
 input[type="color"] {
   width: 100%;
   -webkit-appearance: none;
-  padding: .5em .5em;
+  padding: .5em;
   margin-bottom: 1em;
-  font-size: 1em;
-  line-height: 1.4;
-  background-color: #fff;
+  font-size: font-size(body);
+  line-height: line-height(body);
+  background-color: $white;
   border: 1px solid $gray;
   border-radius: 3px;
   outline: none;
-  color: palette(gray, xx-dark);
+  color: palette(dialexa, body-gray);
 
   &.has-disclaimer {
     margin-bottom: 0;
   }
 
   &:focus {
-    box-shadow: #2D9BE3 0 1px 1px 0;
+    border-color: #2D9BE3;
+    box-shadow: rgba(#2D9BE3, .4) 0 0 0 2px;
   }
 }
 
@@ -46,7 +47,7 @@ select::-ms-expand {
 }
 // Firefox red outline for required fields
 input:required {
-  box-shadow:none;
+  box-shadow: none;
 }
 
 // Rounded search input
@@ -65,14 +66,13 @@ input[type="search"]:focus {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: font-weight(heavy);
   transition: all .1s ease-in-out;
 }
 
 
 // File Input
 input[type="file"] {
-
   cursor: pointer !important;
 
   &::-webkit-file-upload-button {
@@ -82,14 +82,15 @@ input[type="file"] {
   &::-ms-browse {
     @extend %file-input;
   }
-
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-  margin-right: 0.6em;
-  margin-bottom: 1em;
-  margin-top: 0.2em;
+  margin: {
+    right: 0.6em;
+    bottom: 1em;
+    top: 0.2em;
+  }
 }
 
 
@@ -105,7 +106,18 @@ textarea {
 select {
   height: auto;
   font-size: 16px;
-  background-color: $white;
+  background: $white url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <path d="M15.483 8.563c-0.407 0.418-4.695 4.503-4.695 4.503-0.218 0.223-0.503 0.334-0.788 0.334s-0.571-0.111-0.788-0.334c0 0-4.288-4.085-4.696-4.503s-0.435-1.169 0-1.616c0.436-0.446 1.043-0.481 1.576 0l3.908 3.748 3.907-3.747c0.534-0.481 1.142-0.446 1.576 0 0.436 0.446 0.409 1.198 0 1.615z" fill="#000000"></path>
+  </svg>') 98% 50% no-repeat;
+  background-size: 15px;
+  max-width: 450px;
+  -moz-appearance: none;
+  padding-right: 2em;
+
+  // removes dropdown arrow from IE
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 fieldset {
@@ -121,7 +133,7 @@ fieldset {
 }
 
 label {
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .label {
@@ -189,32 +201,6 @@ $input-cols: "25" "33" "40" "50" "60" "66" "75" "100";
     }
   }
 }
-
-.input-col--select {
-  position: relative;
-
-  &:after {
-    content: '';
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
-    <path d="M15.483 8.563c-0.407 0.418-4.695 4.503-4.695 4.503-0.218 0.223-0.503 0.334-0.788 0.334s-0.571-0.111-0.788-0.334c0 0-4.288-4.085-4.696-4.503s-0.435-1.169 0-1.616c0.436-0.446 1.043-0.481 1.576 0l3.908 3.748 3.907-3.747c0.534-0.481 1.142-0.446 1.576 0 0.436 0.446 0.409 1.198 0 1.615z" fill="#000000"></path>
-    </svg>');
-    position: absolute;
-    right: .9em;
-    top: 2.6em;
-    background-size: cover;
-    height: 20px;
-    width: 20px;
-    opacity: .5;
-    pointer-events: none;
-  }
-
-  &.no-label {
-    &:after {
-      top: 1.15em;
-    }
-  }
-}
-
 
 // Input groups with labels // --------------------------------------------------
 
