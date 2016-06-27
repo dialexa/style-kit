@@ -1,22 +1,31 @@
 .table {
   width: 100%;
   margin-bottom: 1em;
+  font-size: .95em;
+  border-collapse: collapse;
+}
+
+%cell {
+  text-align: left;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(black, 0.05);
+  padding: 1em 0.5em;
+  position: relative;
 }
 
 .thead {
-  border-top: 1px solid darken(palette(gray, x-dark), 10%);
-  border-bottom: 1px solid darken(palette(gray, x-dark), 10%);
-
   &__th {
-    text-align: left;
-    padding: .5em;
-    font-weight: 500;
+    @extend %cell;
+    color: palette(gray, x-dark);
+    user-select: none;
+    white-space: nowrap;
+    font-weight: font-weight(heavy);
     letter-spacing: .03em;
-    color: darken(palette(gray, x-dark), 10%);
 
     &.sortable {
       position: relative;
       cursor: pointer;
+
       a {
         margin-left: 8px;
         color: darken(palette(gray, x-dark), 10%);
@@ -49,27 +58,16 @@
 
   &__tr {
     @include pop();
+    transition: background .1s ease;
+    background: white;
 
-    &:nth-of-type(even) {
-      background: darken(palette(gray,x-light),2%);
-    }
-
-    &.pending-row {
-      font-weight: 700;
-    }
-
-    &:hover {
-      .icon {
-        opacity: 1;
-      }
+    &:nth-child(even) {
+      background: palette(gray, xx-light);
     }
   }
 
   &__td {
-    padding: 1em 0;
-    padding-left: .5em;
-    position: relative;
-    font-weight: 300;
+    @extend %cell;
 
     &--xs {
       padding: .5em 0 .5em .5em;
@@ -89,6 +87,7 @@
       padding: 1em 0;
       padding-left: .5em;
       font-size: 1em;
+
       &.centered {
         text-align: center;
         .icon-hot-star {
