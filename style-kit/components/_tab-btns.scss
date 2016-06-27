@@ -4,7 +4,7 @@
   border-radius: 0 !important;
   text-transform: uppercase;
   font-weight: 400;
-  padding: 1em 1.5em;
+  padding: 1.125em 1.675em;
   letter-spacing: 2px;
 }
 
@@ -13,6 +13,7 @@
   justify-content: flex-start;
   padding: 0;
   margin: 0 auto;
+  border-radius: 0;
   margin-bottom: 1em;
   width: 100%;
   border-bottom: 1px solid lighten($gray, 3%);
@@ -20,10 +21,7 @@
   @include gmq(palm) {
     flex-direction: column;
     text-align: center;
-  }
-
-  @include gmq(lap) {
-    font-size: .875em;
+    font-size: .9em;
   }
 
   &--btn {
@@ -31,13 +29,18 @@
     color: palette(gray, dark);
 
     &:hover {
-      box-shadow: $blue 0 -1px 0 0 inset;
+      box-shadow: palette(dialexa, sultan-gold) 0 -1px 0 0 inset;
       color: palette(gray, x-dark);
     }
 
     &.active {
-      box-shadow: $blue 0 -2px 0 0 inset;
+      box-shadow: palette(dialexa, sultan-gold) 0 -3px 0 0 inset;
       color: palette(gray, x-dark);
+    }
+
+    @include gmq(palm) {
+      padding: .875em 1.125em;
+      text-align: center;
     }
   }
 

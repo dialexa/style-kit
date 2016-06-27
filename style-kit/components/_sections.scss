@@ -45,10 +45,6 @@ section {
     letter-spacing: 1px;
     color: palette(gray,x-dark);
     margin-bottom: .5em;
-
-    @include gmq(palm) {
-      text-align: center;
-    }
   }
 
   @each $dir in $border-dirs {

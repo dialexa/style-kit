@@ -59,35 +59,6 @@
   box-shadow: 0 1px 2px 0 rgba(black,0.15), 0 2px 4px 0 rgba(black,0.25);
 }
 
-@mixin hidden-flex {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  left: 100%;
-
-  &[data-show="show"] {
-    left: 0;
-  }
-}
-
-@mixin user-action($color) {
-  td {
-    color: darken($color,5%);
-
-    button {
-      .icon {
-        fill: rgba(darken($color,5%),.3);
-      }
-      &:hover {
-        .icon {
-          fill: rgba(darken($color,5%),.3);
-        }
-      }
-    }
-  }
-}
-
 @mixin arrow($direction: top, $size: 10px, $color: #ccc, $center: 50%, $border-color: #cfcfcf, $margin: 0) {
   position: relative;
   border-color: $border-color;
@@ -182,7 +153,6 @@
   }
 }
 
-
 @mixin display-flex($flex-dir:row, $align-items:null, $justify-content:null) {
   display: flex;
   flex-direction: $flex-dir;
@@ -198,7 +168,7 @@
   $padding-top: null,
   $padding-left: null,
   $padding-bottom: null,
-  $padding-right: null ) {
+  $padding-right: null) {
     margin-top: $margin-top;
     margin-left: $margin-right;
     margin-bottom: $margin-bottom;
