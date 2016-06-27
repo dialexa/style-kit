@@ -1,9 +1,7 @@
 @import './mixins';
 
-// ------------------------
-// POSITIONING
-// ------------------------
-
+// Positioning
+//====================================================
 $declarations: ( "padding" "margin" );
 $pixels: ( "6" "12" "18" "24" "32" "48" "64" );
 $dirs: ( "top" "bottom" "left" "right" "none" );
@@ -43,63 +41,57 @@ $dirs: ( "top" "bottom" "left" "right" "none" );
 }
 
 
-
-// ------------------------
-// LAYOUT
-// ------------------------
-
+// Layout
+//====================================================
 .flex-container {
   display: flex;
 
-  &--column {
+  &.dir-column {
     flex-direction: column;
   }
 
-  &--align-start {
+  &.align-start {
     align-items: flex-start;
   }
 
-  &--align-end {
+  &.align-end {
     align-items: flex-end;
   }
 
-  &--justify-start {
+  &.justify-start {
     justify-content: flex-start;
   }
 
-  &--justify-end {
+  &.justify-end {
     justify-content: flex-end;
   }
 
-  &--center {
+  &.align-center {
     align-items: center;
+  }
+
+  &.justify-center {
     justify-content: center;
   }
 
-  &--justify-between {
+  &.justify-between {
     justify-content: space-between;
   }
 
-  &--justify-around {
+  &.justify-around {
     justify-content: space-around;
   }
 
-  &--wrap {
+  &.flex-wrap {
     flex-wrap: wrap;
   }
 }
 
 
 
-// ------------------------
-// TYPE
-// ------------------------
-
+// Type
+//====================================================
 .text {
-  &--bold {
-    font-weight: 600;
-  }
-
   &--italic {
     font-style: italic;
   }
@@ -115,26 +107,6 @@ $dirs: ( "top" "bottom" "left" "right" "none" );
 
   &--center {
     text-align: center;
-  }
-
-  &--size {
-    $sizes: "75" "80" "85" "90" "95" "105" "110" "115" "120" "125";
-
-    @each $size in $sizes {
-      &--#{$size} {
-        font-size: #{$size}%;
-      }
-    }
-  }
-
-  &--weight {
-    $weights: "100" "200" "300" "400" "500" "600" "700" "800" "900";
-
-    @each $weight in $weights {
-      &--#{$weight} {
-        font-weight: #{$weight};
-      }
-    }
   }
 
   @each $theme, $color in $ui-colors {
