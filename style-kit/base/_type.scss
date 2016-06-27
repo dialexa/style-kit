@@ -132,62 +132,10 @@ ul {
   padding: 0 0 0 $size-base * 2;
 }
 
-// Special Text // ----------------------------------------------------------------------------------
-
-.line-wrapper {
-  position: relative;
-  text-align: center;
-  margin: 1em 0;
-
-  &:before {
-    content: "";
-    display: block;
-    border-top: solid 1px palette(gray,dark);
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-  }
-
-  &__text {
-    position: relative;
-    background: palette(gray,xx-light);
-    padding: 0 20px;
-    z-index: $zIndex-1;
-    font-style: italic;
-  }
-}
-
-
-// Helpers // ---------------------------------------------------
-
-.bold-me {
-  font-weight: 700;
-
-  &--gray {
-    color: palette(gray,dark);
-  }
-}
-
-.ital {
-  font-style: italic;
-  font-weight: 200;
-  margin-left: -.1em;
-}
-
-.required-field {
-  font-weight: normal;
-  font-size: smaller;
-  text-transform: none;
-  font-style: italic;
-  color: palette(gray,dark);
-}
-
-.null-linkto {
-  text-decoration: none;
-  color: inherit;
-  &:hover {
-    color: inherit;
+.unordered-list {
+  &--lg {
+    li {
+      line-height: line-height(body, x-large);
+    }
   }
 }
