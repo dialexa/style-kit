@@ -1,6 +1,6 @@
 {
   "name": "@dialexa/style-kit",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "CSS/ SASS Style kit to set up Dialexa projects",
   "scripts": {
     "css:build": "node-sass --output-style=compact --include-path style-kit/ style-kit/app.scss dist/dialexa-style-kit.css",
