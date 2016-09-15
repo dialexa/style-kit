@@ -1,7 +1,7 @@
 $size-base: 1em;
-$font-family--primary: 'Aaux-Next';
-$font-family--secondary: 'Freight-Text-Pro';
-$font-family--monospace: 'Source Code Pro';
+$font-family--primary: 'Aaux-Next' !default;
+$font-family--secondary: 'Freight-Text-Pro' !default;
+$font-family--monospace: 'Source Code Pro' !default;
 
 @mixin font-primary {
   font-family: $font-family--primary, sans-serif;
